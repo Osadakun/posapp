@@ -100,10 +100,14 @@
     }
   </script>
   <script type="module">
-    import { firebaseConfig } from './FirebaseConfig.js'
-    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.5/firebase-app.js";
-    import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.6.5/firebase-analytics.js";
-    firebase.initializeApp(firebaseConfig);
+    import { firebaseConfig } from './FirebaseConfig.js';
+    import { initializeApp } from 'firebase/app';
+    import { getFirestore, collection, getDocs } from 'firebase/firestore/lite';
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const db = getFirestore(app);
   </script>
 </body>
 </html>
