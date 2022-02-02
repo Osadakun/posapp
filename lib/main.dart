@@ -26,36 +26,34 @@ class TodoListPage extends StatelessWidget {
         title: Text('リスト一覧'),
       ),
       body: ListView(
-        children: <Widget> [
+        children: <Widget>[
           Card(
             child: ListTile(
-              title:Text('ニンジンを買う'),
+              title: Text('ニンジンを買う'),
             ),
           ),
           Card(
             child: ListTile(
-              title:Text('タマネギを買う'),
+              title: Text('タマネギを買う'),
             ),
           ),
           Card(
             child: ListTile(
-              title:Text('ジャガイモを買う'),
+              title: Text('ジャガイモを買う'),
             ),
           ),
           Card(
             child: ListTile(
-              title:Text('カレールーを買う'),
+              title: Text('カレールーを買う'),
             ),
           ),
         ],
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          Navigator.of(context).push(
-            MaterialPageRoute(builder: (context) {
-              return TodoAddPage();
-            })
-          );
+          Navigator.of(context).push(MaterialPageRoute(builder: (context) {
+            return TodoAddPage();
+          }));
         },
         child: Icon(Icons.add),
       ),
@@ -67,12 +65,34 @@ class TodoAddPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
-        child: TextButton(
-          onPressed: () {
-            Navigator.of(context).pop();
-          },
-          child: Text('リスト追加画面（クリックで戻る）'),
+      appBar: AppBar(
+        title: Text('リスト追加'),
+      ),
+      body: Container(
+        padding: EdgeInsets.all(64),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            TextField(),
+            const SizedBox(height: 8),
+            Container(
+              width: double.infinity,
+              child: ElevatedButton(
+                onPressed: () {},
+                child: Text('リスト追加', style: TextStyle(color: Colors.white)),
+              ),
+            ),
+            const SizedBox(height: 8),
+            Container(
+              width: double.infinity,
+              child: TextButton(
+                onPressed: () {
+                  Navigator.of(context).pop();
+                },
+                child: Text('キャンセル'),
+              ),
+            )
+          ],
         ),
       ),
     );
