@@ -38,7 +38,7 @@ class _TodoListPageState extends State<TodoListPage> {
           );
           if (newListText != null) {
             // キャンセルした場合は newListText が null となるので注意
-            setState(() {npm 
+            setState(() {npm
               // リスト追加
               todoList.add(newListText);
             });
